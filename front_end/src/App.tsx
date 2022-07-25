@@ -7,7 +7,7 @@ function App() {
     <DAppProvider config={{
       supportedChains: [ChainId.Kovan, ChainId.Rinkeby]
     }}>
-      <Header></Header>
+      <Header/>
       <div>Hi!</div>
     </DAppProvider>
   );

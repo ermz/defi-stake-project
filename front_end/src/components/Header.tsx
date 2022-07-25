@@ -1,3 +1,4 @@
+import React from 'react'
 import { useEthers } from "@usedapp/core"
 
 export const Header = () => {
@@ -8,8 +9,8 @@ export const Header = () => {
     return (
         <div>
             {isConnected ? (
-                <button color="primary">
-                    onClick={deactivate}
+                <button color="primary"
+                    onClick={deactivate}>
                     Disconnect
                 </button>
             ) : (
