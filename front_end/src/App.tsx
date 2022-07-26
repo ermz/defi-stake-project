@@ -1,15 +1,15 @@
 import React from 'react';
-import {DAppProvider, ChainId} from "@usedapp/core"
-import {Header} from "./components/Header"
+import { ChainId, DAppProvider } from "@usedapp/core"
+import { Header } from "./components/Header"
 
 function App() {
   return (
     <DAppProvider config={{
-      supportedChains: [ChainId.Kovan, ChainId.Rinkeby]
+      supportedChains: [ChainId.Kovan]
     }}>
-      <Header/>
-      <div>Hi!</div>
+      <Header />
     </DAppProvider>
+      
   );
 }
 

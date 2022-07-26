@@ -1,25 +1,39 @@
-import React from 'react'
+import { Button, makeStyles } from "@material-ui/core"
 import { useEthers } from "@usedapp/core"
+import React from 'react'
+
+const useStyles = makeStyles((theme) => ({
+    container: {
+        padding: theme.spacing(4),
+        display: "flex",
+        justifyContent: "flex-end",
+        gap: theme.spacing(1)
+    },
+}))
+
 
 export const Header = () => {
-    const { account, activateBrowserWallet, deactivate} = useEthers()
+    const classes = useStyles()
+
+    const { account, activateBrowserWallet, deactivate } = useEthers()
 
     const isConnected = account !== undefined
 
     return (
         <div>
             {isConnected ? (
-                <button color="primary"
-                    onClick={deactivate}>
+                <Button variant="contained" onClick={deactivate}>
                     Disconnect
-                </button>
+                </Button>
             ) : (
-                <button color="primary"
-                    onClick={() => activateBrowserWallet()}>
+                <Button
+                    color="primary"
+                    variant="contained"
+                    onClick={() => activateBrowserWallet()}
+                >
                     Connect
-                </button>
-            )
-            }
+                </Button>
+            )}
         </div>
     )
 }
